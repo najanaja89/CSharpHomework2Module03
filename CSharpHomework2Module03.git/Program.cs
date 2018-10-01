@@ -38,16 +38,34 @@ namespace CSharpHomework2Module03.git
                 else if (menu == "2")
                 {
                     string ticketNum = "";
+                  
+                   
 
                     while (ticketNum.Length != 6 )
-                    {
+                    {   
                         Console.WriteLine("Enter number of ticket (6 digits) ");
                         ticketNum = Console.ReadLine();
                         if (ticketNum.Length != 6) Console.WriteLine("Count of digits must equal 6!");
-                    }
-                 
 
-                  
+                        int ticketNumInt = 0;
+                        bool result = int.TryParse(ticketNum, out ticketNumInt);
+                        if (result == false)
+                        {
+                            Console.WriteLine("Ticket number must have a numbers!");
+                            ticketNum = "";
+                        }
+                    }
+
+                    int numOneInt = Convert.ToInt32(ticketNum[0]);
+                    int numTwoInt = Convert.ToInt32(ticketNum[1]);
+                    int numThreeInt = Convert.ToInt32(ticketNum[2]);
+                    int numFourInt = Convert.ToInt32(ticketNum[3]);
+                    int numFiveInt = Convert.ToInt32(ticketNum[4]);
+                    int numSixInt = Convert.ToInt32(ticketNum[5]);
+
+                    if ((numOneInt + numTwoInt + numThreeInt) == (numFourInt + numFiveInt + numSixInt)) Console.WriteLine("Ticket is Happy!");
+                    else Console.WriteLine("Ticket is not  Happy(");
+
                 }
             }
             Console.ReadLine();
