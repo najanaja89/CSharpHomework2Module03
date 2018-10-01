@@ -1,0 +1,7 @@
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\bin\Debug\CSharpHomework2Module03.git.exe.config
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\bin\Debug\CSharpHomework2Module03.git.exe
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\bin\Debug\CSharpHomework2Module03.git.pdb
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\obj\Debug\CSharpHomework2Module03.git.csprojAssemblyReference.cache
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\obj\Debug\CSharpHomework2Module03.git.csproj.CoreCompileInputs.cache
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\obj\Debug\CSharpHomework2Module03.git.exe
+C:\Users\r.tyo\source\repos\CSharpHomework2Module03.git\CSharpHomework2Module03.git\obj\Debug\CSharpHomework2Module03.git.pdb
