@@ -10,10 +10,12 @@ namespace CSharpHomework2Module03.git
     {
         static void Main(string[] args)
         {
-            while (true) {
+            while (true)
+            {
                 string menu = "";
                 Console.WriteLine("Press 1 to calculate count of spaces in strings");
                 Console.WriteLine("Press 2 to calculate happy number of ticket");
+                Console.WriteLine("Press 3 to change font to upper case");
                 menu = Console.ReadLine();
 
                 if (menu == "1")
@@ -38,11 +40,11 @@ namespace CSharpHomework2Module03.git
                 else if (menu == "2")
                 {
                     string ticketNum = "";
-                  
-                   
 
-                    while (ticketNum.Length != 6 )
-                    {   
+
+
+                    while (ticketNum.Length != 6)
+                    {
                         Console.WriteLine("Enter number of ticket (6 digits) ");
                         ticketNum = Console.ReadLine();
                         if (ticketNum.Length != 6) Console.WriteLine("Count of digits must equal 6!");
@@ -66,6 +68,26 @@ namespace CSharpHomework2Module03.git
                     if ((numOneInt + numTwoInt + numThreeInt) == (numFourInt + numFiveInt + numSixInt)) Console.WriteLine("Ticket is Happy!");
                     else Console.WriteLine("Ticket is not  Happy(");
 
+                }
+
+                else if (menu == "3")
+                {
+                    Console.WriteLine("Enter string to convert");
+                    string input = Console.ReadLine();
+                    string output = "";
+                    for (int i = 0; i < input.Length; i++)
+                    {
+                        if (input[i] >= 65 && input[i] <= 90)
+                        {
+                            output += Convert.ToChar(input[i] + 32);
+                        }
+                        else if (input[i] >= 97 && input[i] <= 122)
+                        {
+                            output += Convert.ToChar(input[i] - 32);
+                        }
+                        else output += Convert.ToChar(input[i]);
+                    }
+                    Console.WriteLine(output);
                 }
             }
             Console.ReadLine();
