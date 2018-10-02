@@ -17,6 +17,7 @@ namespace CSharpHomework2Module03.git
                 Console.WriteLine("Press 2 to calculate happy number of ticket");
                 Console.WriteLine("Press 3 to change font to upper case");
                 Console.WriteLine("Press 4 for task four");
+                Console.WriteLine("Press 5 for task five");
                 menu = Console.ReadLine();
 
                 if (menu == "1")
@@ -32,8 +33,14 @@ namespace CSharpHomework2Module03.git
                         temp = Console.ReadLine();
                         countOfSpace += temp;
                         count = countOfSpace.Count(Char.IsWhiteSpace);
-                    }
 
+                        for (int i = 0; i < temp.Length; i++)
+                        {
+                            if (temp[i] == '.') temp = ".";
+                        }
+              
+                    }
+                    Console.WriteLine();
                     Console.WriteLine("Entered string is " + countOfSpace);
                     Console.WriteLine("Count of spaces is {0}", count);
                 }
@@ -41,8 +48,6 @@ namespace CSharpHomework2Module03.git
                 else if (menu == "2")
                 {
                     string ticketNum = "";
-
-
 
                     while (ticketNum.Length != 6)
                     {
@@ -66,6 +71,8 @@ namespace CSharpHomework2Module03.git
                     int numFiveInt = Convert.ToInt32(ticketNum[4]);
                     int numSixInt = Convert.ToInt32(ticketNum[5]);
 
+                    Console.WriteLine();
+
                     if ((numOneInt + numTwoInt + numThreeInt) == (numFourInt + numFiveInt + numSixInt)) Console.WriteLine("Ticket is Happy!");
                     else Console.WriteLine("Ticket is not  Happy(");
 
@@ -76,6 +83,7 @@ namespace CSharpHomework2Module03.git
                     Console.WriteLine("Enter string to convert");
                     string input = Console.ReadLine();
                     string output = "";
+                    Console.WriteLine();
                     for (int i = 0; i < input.Length; i++)
                     {
                         if (input[i] >= 65 && input[i] <= 90)
@@ -93,6 +101,7 @@ namespace CSharpHomework2Module03.git
 
                 else if (menu == "4")
                 {
+                   
                     string stringA = "";
                     string stringB = "";
                     int intA = 0;
@@ -100,7 +109,7 @@ namespace CSharpHomework2Module03.git
                     int row = 0;
                     int temp = 0;
 
-                    while (stringA =="" || stringB =="")
+                    while (stringA == "" || stringB == "")
                     {
                         Console.WriteLine("Enter num A value: ");
                         stringA = Console.ReadLine();
@@ -124,10 +133,10 @@ namespace CSharpHomework2Module03.git
                         if (intA > intB)
                         {
                             Console.WriteLine("num A value must be less than num B!");
-                            stringA = ""; 
+                            stringA = "";
                         }
 
-                        if (intA <=0)
+                        if (intA <= 0)
                         {
                             Console.WriteLine("num A must unsigned!");
                             stringA = "";
@@ -137,6 +146,7 @@ namespace CSharpHomework2Module03.git
                     row++;
                     temp = intA;
                     int[,] intArray = new int[row, intB];
+                    Console.WriteLine();
                     for (int i = 0; i < row; i++)
                     {
                         for (int j = 0; j < temp; j++)
@@ -148,6 +158,37 @@ namespace CSharpHomework2Module03.git
                         Console.WriteLine();
                         Console.WriteLine();
                     }
+                }
+
+                else if (menu == "5")
+                {
+                    string stringN = "";
+                    int intN;
+
+                    while (stringN == "")
+                    {
+                        Console.WriteLine("Enter N value: ");
+                        stringN = Console.ReadLine();
+                       
+
+                        bool result = int.TryParse(stringN, out intN);
+                        if (result == false)
+                        {
+                            Console.WriteLine("Enter numeric value!");
+                            stringN = "";
+                        }
+
+                        if (intN <= 0)
+                        {
+                            Console.WriteLine("num N must unsigned!");
+                            stringN = "";
+                        }
+
+                    }
+                    Console.WriteLine();
+                    char[] arrayChar = stringN.ToCharArray();
+                    Array.Reverse(arrayChar);
+                    Console.WriteLine(arrayChar);
                 }
             }
             Console.ReadLine();
