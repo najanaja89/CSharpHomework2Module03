@@ -16,6 +16,7 @@ namespace CSharpHomework2Module03.git
                 Console.WriteLine("Press 1 to calculate count of spaces in strings");
                 Console.WriteLine("Press 2 to calculate happy number of ticket");
                 Console.WriteLine("Press 3 to change font to upper case");
+                Console.WriteLine("Press 4 for task four");
                 menu = Console.ReadLine();
 
                 if (menu == "1")
@@ -88,6 +89,65 @@ namespace CSharpHomework2Module03.git
                         else output += Convert.ToChar(input[i]);
                     }
                     Console.WriteLine(output);
+                }
+
+                else if (menu == "4")
+                {
+                    string stringA = "";
+                    string stringB = "";
+                    int intA = 0;
+                    int intB = 0;
+                    int row = 0;
+                    int temp = 0;
+
+                    while (stringA =="" || stringB =="")
+                    {
+                        Console.WriteLine("Enter num A value: ");
+                        stringA = Console.ReadLine();
+                        Console.WriteLine("Enter num B value: ");
+                        stringB = Console.ReadLine();
+
+                        bool result = int.TryParse(stringA, out intA);
+                        if (result == false)
+                        {
+                            Console.WriteLine("Enter numeric value!");
+                            stringA = "";
+                        }
+
+                        result = int.TryParse(stringB, out intB);
+                        if (result == false)
+                        {
+                            Console.WriteLine("Enter numeric value!");
+                            stringB = "";
+                        }
+
+                        if (intA > intB)
+                        {
+                            Console.WriteLine("num A value must be less than num B!");
+                            stringA = ""; 
+                        }
+
+                        if (intA <=0)
+                        {
+                            Console.WriteLine("num A must unsigned!");
+                            stringA = "";
+                        }
+                    }
+                    row = intB - intA;
+                    row++;
+                    temp = intA;
+                    int[,] intArray = new int[row, intB];
+                    for (int i = 0; i < row; i++)
+                    {
+                        for (int j = 0; j < temp; j++)
+                        {
+                            intArray[i, j] = temp;
+                            Console.Write(intArray[i, j] + " ");
+                        }
+                        temp++;
+                        Console.WriteLine();
+                        Console.WriteLine();
+                    }
                 }
             }
             Console.ReadLine();
